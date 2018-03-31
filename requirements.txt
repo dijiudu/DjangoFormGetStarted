@@ -67,7 +67,7 @@ python manage.py makemigrations messages
 只有操作了这一步，才会新建 一个叫 message_usermessage 的表单
 
 --如果在models .py里面没有定义主键 object_id 那么表单是默认按照 原本的主键ID 自动自增，
-每次记录不会覆盖，如果自定义了主键，怎每次体检的留言信息都会覆盖前一次的数据
+每次记录不会覆盖，如果自定义了主键，在网页上的留言信息都会覆盖前一次的数据，导致最终只有一个留言。
 
 
 
