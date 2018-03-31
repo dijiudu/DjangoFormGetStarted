@@ -4,4 +4,5 @@ from django.apps import AppConfig
 
 
 class MessageConfig(AppConfig):
-    name = 'apps.message'
+    name = 'message'
+    verbose_name = "折叠菜单"

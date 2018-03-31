@@ -13,17 +13,17 @@ def getform(request):
     
     # # 3-5 查询部分
     # message = None
-    all_message = UserMessage.objects.filter(name='mtianyan', address='西安')
+    # all_message = UserMessage.objects.filter(name='mtianyan', address='西安')
 
-    # if 判断是否存在数据
-    if all_message:
-        # all_message是一个list，可以使用切片。
-        message = all_message[0]
-        # message = all_message[2:8]
+    # # if 判断是否存在数据
+    # if all_message:
+    #     # all_message是一个list，可以使用切片。
+    #     message = all_message[0]
+    #     # message = all_message[2:8]
     
-    return render(request, 'message_form.html',{
-        "my_message" : message
-    })
+    # return render(request, 'message_form.html',{
+    #     "my_message" : message
+    # })
 
     # UserMessage默认的数据管理器objects
     # 方法1 :all()是将所有数据返回成一个queryset类型(django的内置类型)
@@ -62,27 +62,27 @@ def getform(request):
     # html表单部分
 
     # 此处对应html中的method="post"，表示我们只处理post请求
-    # if request.method == "POST":
-    #     # 就是取字典里key对应value值而已。取name，取不到默认空
-    #     name = request.POST.get('name', '')
-    #     message = request.POST.get('message', '')
-    #     address = request.POST.get('address', '')
-    #     email = request.POST.get('email', '')
+    if request.method == "POST":
+        # 就是取字典里key对应value值而已。取name，取不到默认空
+        name = request.POST.get('name', '')
+        message = request.POST.get('message', '')
+        address = request.POST.get('address', '')
+        email = request.POST.get('email', '')
     
-    #     # 实例化对象
-    #     user_message = UserMessage()
+        # 实例化对象
+        user_message = UserMessage()
     
-    #     # 将html的值传入我们实例化的对象.
-    #     user_message.name = name
-    #     user_message.message = message
-    #     user_message.address = address
-    #     user_message.email = email
-    #     #user_message.object_id = '主键'
+        # 将html的值传入我们实例化的对象.
+        user_message.name = name
+        user_message.message = message
+        user_message.address = address
+        user_message.email = email
+        #user_message.object_id = '主键'
     
-    #     # 调用save方法进行保存
-    #     user_message.save()
+        # 调用save方法进行保存
+        user_message.save()
 
-    # return render(request, 'message_form.html')
+    return render(request, 'message_form.html')
 
 
 
