@@ -22,5 +22,6 @@ from message import views
 
 urlpatterns = [
     path('xadmin/', xadmin.site.urls),
+    #url(r'^form/$', getform, name = "form_new")  old style
     path(r'form/', getform, name="form_new"),
 ]
